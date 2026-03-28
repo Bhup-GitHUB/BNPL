@@ -10,6 +10,12 @@ go run ./cmd/server
 
 The gRPC server listens on `APP_PORT`, default `9090`.
 
+To start local Postgres:
+
+```bash
+docker-compose up -d
+```
+
 ## Environment
 
 - `DATABASE_URL`
@@ -32,3 +38,9 @@ go test ./...
 ```
 
 Set `TEST_DATABASE_URL` to run the Postgres integration test.
+
+Example:
+
+```bash
+TEST_DATABASE_URL=postgres://postgres:postgres@localhost:5432/bnpl?sslmode=disable go test ./...
+```
