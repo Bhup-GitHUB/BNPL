@@ -8,18 +8,18 @@ import (
 )
 
 type Config struct {
-	Port                  string
-	DatabaseURL           string
-	RequestTimeout        time.Duration
-	BureauTimeout         time.Duration
-	AccountTimeout        time.Duration
-	FraudTimeout          time.Duration
-	FeatureLatency        time.Duration
-	BureauLatency         time.Duration
-	AccountLatency        time.Duration
-	FraudLatency          time.Duration
-	ApproveScore          int
-	RejectScore           int
+	Port           string
+	DatabaseURL    string
+	RequestTimeout time.Duration
+	BureauTimeout  time.Duration
+	AccountTimeout time.Duration
+	FraudTimeout   time.Duration
+	FeatureLatency time.Duration
+	BureauLatency  time.Duration
+	AccountLatency time.Duration
+	FraudLatency   time.Duration
+	ApproveScore   int
+	RejectScore    int
 }
 
 func Load() (Config, error) {

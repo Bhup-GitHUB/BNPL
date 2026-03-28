@@ -17,19 +17,19 @@ import (
 )
 
 type Service struct {
-	repo            domain.ApplicationRepository
-	audit           domain.AuditRepository
-	bureau          domain.BureauClient
-	account         domain.AccountAggregatorClient
-	fraud           domain.FraudClient
-	features        domain.FeatureBuilder
-	scoring         domain.ScoringEngine
-	rules           domain.RulesEngine
-	logger          *log.Logger
-	requestTimeout  time.Duration
-	bureauTimeout   time.Duration
-	accountTimeout  time.Duration
-	fraudTimeout    time.Duration
+	repo           domain.ApplicationRepository
+	audit          domain.AuditRepository
+	bureau         domain.BureauClient
+	account        domain.AccountAggregatorClient
+	fraud          domain.FraudClient
+	features       domain.FeatureBuilder
+	scoring        domain.ScoringEngine
+	rules          domain.RulesEngine
+	logger         *log.Logger
+	requestTimeout time.Duration
+	bureauTimeout  time.Duration
+	accountTimeout time.Duration
+	fraudTimeout   time.Duration
 }
 
 type Options struct {
@@ -129,14 +129,14 @@ func (s *Service) SubmitApplication(ctx context.Context, req *api.SubmitApplicat
 	})
 
 	var (
-		wg               sync.WaitGroup
-		mu               sync.Mutex
-		bureauReport     domain.BureauReport
-		accountReport    domain.AccountAggregatorReport
-		fraudReport      domain.FraudReport
-		behaviorReport   domain.BehaviorFeatures
-		snapshots        []domain.ProviderSnapshot
-		criticalTimeout  bool
+		wg              sync.WaitGroup
+		mu              sync.Mutex
+		bureauReport    domain.BureauReport
+		accountReport   domain.AccountAggregatorReport
+		fraudReport     domain.FraudReport
+		behaviorReport  domain.BehaviorFeatures
+		snapshots       []domain.ProviderSnapshot
+		criticalTimeout bool
 	)
 
 	appendSnapshot := func(snapshot domain.ProviderSnapshot) {

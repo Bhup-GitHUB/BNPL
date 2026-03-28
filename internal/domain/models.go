@@ -128,19 +128,19 @@ type AuditEvent struct {
 }
 
 type DecisionTrace struct {
-	ApplicationID string
-	TraceID       string
-	Status        DecisionStatus
-	Score         int
-	ApprovedLimit int64
-	Reasons       []string
-	RuleHits      []string
-	ScoreBreakdown map[string]float64
+	ApplicationID   string
+	TraceID         string
+	Status          DecisionStatus
+	Score           int
+	ApprovedLimit   int64
+	Reasons         []string
+	RuleHits        []string
+	ScoreBreakdown  map[string]float64
 	FeatureSnapshot map[string]any
-	FraudHit      bool
-	DedupeHit     bool
-	ProviderState map[string]string
+	FraudHit        bool
+	DedupeHit       bool
+	ProviderState   map[string]string
 	ProviderLatency map[string]int64
-	CreatedAt     time.Time
-	UpdatedAt     time.Time
+	CreatedAt       time.Time
+	UpdatedAt       time.Time
 }
